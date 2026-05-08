@@ -24,9 +24,9 @@ const config: Config = {
       colors: {
         // Anthropic-derived neutrals (canvas swapped to milky #FAFAF8)
         parchment: "#FAFAF8",       // page itself
-        vellum: "#F0EEE6",          // secondary surface — was beige #EADFC2; now milky-ivory
-        "paper-3": "#E8E6DC",       // ivory-dark
-        "oat-surface": "#E3DACC",   // tertiary surface
+        vellum: "#F5F3F1",          // secondary surface — was beige #EADFC2; pulled cooler than Anthropic's #F0EEE6 to read as plain milky-white
+        "paper-3": "#EDEBE4",       // ivory-dark — cooled vs Anthropic #E8E6DC
+        "oat-surface": "#E5E2D8",   // tertiary surface — cooled vs Anthropic #E3DACC
         "cloud-light": "#D1CFC5",
         "cloud-medium": "#B0AEA5",
         "cloud-dark": "#87867F",

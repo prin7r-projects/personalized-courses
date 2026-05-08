@@ -18,9 +18,9 @@
 :root {
   /* Lifted from Anthropic (canvas swapped to milky #FAFAF8) */
   --parchment:    #FAFAF8;   /* page base — milky white (was Anthropic ivory #faf9f5; swapped per no-beige rule) */
-  --vellum:       #F0EEE6;   /* secondary surface — was beige #EADFC2, now Anthropic paper-2 milky-ivory */
-  --paper-3:      #E8E6DC;   /* ivory-dark — body text on dark cards, dividers */
-  --oat-surface:  #E3DACC;   /* tertiary surface — release-card backgrounds */
+  --vellum:       #F5F3F1;   /* secondary surface — pulled cooler than Anthropic's ivory-medium #F0EEE6 to read as plain milky-white card on the parchment ground (was warm beige #EADFC2 before refresh). */
+  --paper-3:      #EDEBE4;   /* ivory-dark — body text on dark cards, dividers (cooled vs Anthropic #E8E6DC) */
+  --oat-surface:  #E5E2D8;   /* tertiary surface — release-card backgrounds (cooled vs Anthropic #E3DACC) */
   --cloud-light:  #D1CFC5;   /* dividers, hairline borders */
   --cloud-medium: #B0AEA5;   /* disabled / muted borders */
   --cloud-dark:   #87867F;   /* secondary text, meta labels */
@@ -58,12 +58,11 @@ body {
   color: var(--walnut);
 }
 
-/* Paper grain — softened to a near-imperceptible cool wash (was warm beige radial) */
+/* Paper grain — flat milky surface only.
+   The previous warm radial wash (gilt + marginalia tints) read as a beige tea-stain
+   even at low opacity, so it has been removed in the 2026-05-08 design refresh. */
 .grain {
-  background:
-    radial-gradient(1200px 600px at 18% 8%, rgba(168,126,44,.025), transparent 60%),
-    radial-gradient(900px 480px at 92% 110%, rgba(164,50,31,.02), transparent 60%),
-    var(--parchment);
+  background: var(--parchment);
 }
 
 /* Word-level underline emphasis — Anthropic's signature mechanic.

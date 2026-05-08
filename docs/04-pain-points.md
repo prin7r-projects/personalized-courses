@@ -8,7 +8,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** The course was authored for an _imagined average student_. The pedagogy fits no real student because it has to fit a marketing target. There is no syllabus-of-one because the unit economics of mass-market online learning don't allow it.
 
-**Reading List remedy.** Every course is generated against (a) one declared goal and (b) one current-level paragraph. Modules the buyer doesn't need are cut at draft time, not skipped at watch time.
+**Curriculum7 remedy.** Every course is generated against (a) one declared goal and (b) one current-level paragraph. Modules the buyer doesn't need are cut at draft time, not skipped at watch time.
 
 ## Pain 2 — "I can't tell what is true"
 
@@ -16,7 +16,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** Frontier LLMs hallucinate confidently. Self-directed learners cannot afford a single hallucination — it poisons the rest of the course. The "AI tutor" pattern is uniquely badly suited for the population that needs it most.
 
-**Reading List remedy.** The studio names every reading. The studio verifies every named reading against an open citation database (Crossref, OpenLibrary) at draft time. Where verification fails, the syllabus marks the reading "tutor to verify" and a human replaces it before the drip ships. The course is an _editorial_ artifact, not a chat session.
+**Curriculum7 remedy.** The studio names every reading. The studio verifies every named reading against an open citation database (Crossref, OpenLibrary) at draft time. Where verification fails, the syllabus marks the reading "tutor to verify" and a human replaces it before the drip ships. The course is an _editorial_ artifact, not a chat session.
 
 ## Pain 3 — "I can't sustain the cadence"
 
@@ -24,7 +24,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** The product packs the entire library in front of the buyer. The buyer is responsible for self-pacing. The platform has no view of the buyer's schedule, energy budget, or the rest of their life. Streak-shaming is the platform's only retention lever — and it actively hurts the audience.
 
-**Reading List remedy.** The drip is the discipline. One module per week (or two, or four — buyer's choice at intake). The next module ships at a fixed time the buyer chose. The buyer cannot accidentally over-consume. There are no streaks; there are weeks. A week is the unit. Adults respect weeks.
+**Curriculum7 remedy.** The drip is the discipline. One module per week (or two, or four — buyer's choice at intake). The next module ships at a fixed time the buyer chose. The buyer cannot accidentally over-consume. There are no streaks; there are weeks. A week is the unit. Adults respect weeks.
 
 ## Pain 4 — "The cohort doesn't fit my life"
 
@@ -32,7 +32,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** Synchronous cohort schedules are rigid for a reason — it's how cohorts make economic sense for the seller. But it's actively hostile for the buyer who has any caregiving, shift work, time-zone, or health constraint.
 
-**Reading List remedy.** Asynchronous by default. Drip at the buyer's chosen day + hour. The optional coach-augmented tier offers a 30-minute weekly call, scheduled in the buyer's timezone, that can be rescheduled with 48 hours' notice. The course is independent of any cohort — modules drip whether or not anyone else is reading.
+**Curriculum7 remedy.** Asynchronous by default. Drip at the buyer's chosen day + hour. The optional coach-augmented tier offers a 30-minute weekly call, scheduled in the buyer's timezone, that can be rescheduled with 48 hours' notice. The course is independent of any cohort — modules drip whether or not anyone else is reading.
 
 ## Pain 5 — "I bought it; I never finished it"
 
@@ -40,7 +40,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** Marketplace courses optimize for sale, not completion. The marginal cost of a sold-but-unfinished course is zero to the seller; the cost is psychological-to-the-buyer. The buyer is the loser of every transaction.
 
-**Reading List remedy.** The studio has a refund clause for the syllabus (one paragraph, one email, money back if it doesn't feel written for you). The drip ends in a graded evaluation, which forces a closing event. The course exists to be finished. The economic incentives are aligned: we make money on subscription renewal, which only happens if last quarter's course closed well.
+**Curriculum7 remedy.** The studio has a refund clause for the syllabus (one paragraph, one email, money back if it doesn't feel written for you). The drip ends in a graded evaluation, which forces a closing event. The course exists to be finished. The economic incentives are aligned: we make money on subscription renewal, which only happens if last quarter's course closed well.
 
 ## Pain 6 — "I want to learn the niche thing, but no one made a course for it"
 
@@ -48,7 +48,7 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** Marketplace economics produce only courses with at least 5,000 prospective buyers. Niches get nothing.
 
-**Reading List remedy.** Generation per buyer. The audience for one course is one. Niches are first-class. The reading verifier and the rubric library are the only fixed costs; everything else scales per-buyer.
+**Curriculum7 remedy.** Generation per buyer. The audience for one course is one. Niches are first-class. The reading verifier and the rubric library are the only fixed costs; everything else scales per-buyer.
 
 ## Pain 7 — "I want my work, not theirs"
 
@@ -56,4 +56,4 @@ The pains below are real, specific, and observed — they are why a self-directe
 
 **Root cause.** Video-first pedagogy is a transmission model — the buyer is a passive receiver. There is no artifact unless the course explicitly demands one, which most don't because completion rates would crater.
 
-**Reading List remedy.** Every module ends in a small artifact: a paragraph, a function, a recording, a translated page. By the end of a 4-module course, the buyer has 4 artifacts, all signed-off, all exportable. The course is a body of writing about your own learning that you can re-read in a year.
+**Curriculum7 remedy.** Every module ends in a small artifact: a paragraph, a function, a recording, a translated page. By the end of a 4-module course, the buyer has 4 artifacts, all signed-off, all exportable. The course is a body of writing about your own learning that you can re-read in a year.

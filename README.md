@@ -1,8 +1,8 @@
-# Reading List — Personalized courses on demand
+# Curriculum7 — Personalized courses on demand
 
 > An agent-native learning studio. Tell us your goal and your current level, get back a personalized syllabus — readings, videos, exercises, evaluations — generated for you and dripped at a sustainable pace.
 
-- **Live**: <https://personalized-courses.prin7r.com>
+- **Live**: <https://curriculum7.com> (alias <https://personalized-courses.prin7r.com>)
 - **Notion opportunity**: `3543ceec-2619-81ed-a815-e1475713e1e5`
 - **Wave**: 2 · **Stack**: SaaS · **Status**: landing live · app stub
 - **Brand**: a private tutor's notebook (parchment + walnut + gilt + marginalia red)
@@ -48,8 +48,8 @@ For NOWPayments crypto checkout to function, the runtime must have `NOWPAYMENTS_
 
 Production screenshots are committed at `/docs/screenshots/landing-desktop.png` and `/docs/screenshots/landing-mobile.png`. They are linked in `DESIGN.md` section 13.
 
-![Reading List landing — desktop](docs/screenshots/landing-desktop.png)
-![Reading List landing — mobile](docs/screenshots/landing-mobile.png)
+![Curriculum7 landing — desktop](docs/screenshots/landing-desktop.png)
+![Curriculum7 landing — mobile](docs/screenshots/landing-mobile.png)
 
 ## Brand sketch
 

@@ -1,6 +1,6 @@
-# Reading List — application
+# Curriculum7 — application
 
-This directory is the placeholder for the Reading List SaaS app — the surface that lets a buyer take an intake, receive a syllabus, drip modules, submit work, and receive evaluations. It is intentionally a stub for the Wave 2 batch.
+This directory is the placeholder for the Curriculum7 SaaS app — the surface that lets a buyer take an intake, receive a syllabus, drip modules, submit work, and receive evaluations. It is intentionally a stub for the Wave 2 batch.
 
 ## Stack target
 
@@ -9,7 +9,7 @@ This directory is the placeholder for the Reading List SaaS app — the surface 
 - **Auth**: Open-SaaS's email + magic-link, plus optional GitHub for the engineer-learner cohort.
 - **Billing rail**: NOWPayments crypto invoice (mirrored from `apps/landing/`), with Plisio as backup. The same `lib/nowpayments.ts` pattern in the landing applies here for course-purchase invoicing.
 - **Storage**: Postgres (managed) + S3-compatible object store for student-submitted artifacts (essays, audio, code archives).
-- **Course generation**: GLM 5.1 Flash for syllabus drafts (cheap, good for structured output), Claude 4.7 Sonnet for evaluation grading (precise rubric application). Reading verification against an open citation database (Crossref / OpenLibrary).
+- **Course generation**: GLM 5.1 Flash for syllabus drafts (cheap, good for structured output), Claude 4.7 Sonnet for evaluation grading (precise rubric application). Citation verification against an open database (Crossref / OpenLibrary).
 - **Drip queue**: a small worker that reads scheduled deliveries from a `course_drip` table and posts the next module via email + in-app inbox.
 
 ## Why a stub for Wave 2 batch
@@ -26,7 +26,7 @@ rm -rf .git  # keep the parent repo's git history
 
 # 2. swap the brand
 #    - apps/app/src/client/theme.ts ← /apps/landing/app/globals.css palette
-#    - apps/app/main.wasp ← name "ReadingList", title "Reading List"
+#    - apps/app/main.wasp ← name "Curriculum7", title "Curriculum7"
 #    - apps/app/src/client/icon.svg ← /apps/landing/app/icon.svg
 
 # 3. wire NOWPayments

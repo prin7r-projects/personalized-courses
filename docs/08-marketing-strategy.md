@@ -4,14 +4,14 @@
 
 > A private tutor's reading list — written for one student, dripped weekly, graded against a rubric that reader saw at intake.
 
-The core repositioning move is from _platform_ ("a place to learn") to _editorial artifact_ ("a syllabus made for you"). Reading List is closer in spirit to a small literary press than to Coursera.
+The core repositioning move is from _platform_ ("a place to learn") to _editorial artifact_ ("a syllabus made for you"). Curriculum7 is closer in spirit to a small literary press than to Coursera.
 
 ## Messaging hierarchy
 
 ```
 H1 (the hero)        →  "A syllabus of one. Built around the thing you actually want to learn."
 H2 (the lede)        →  "Tell us your goal in one sentence and your current level in two.
-                         Reading List answers with a personalized course — readings, videos,
+                         Curriculum7 answers with a personalized course — readings, videos,
                          exercises, evaluations — generated for you and dripped at a pace
                          that respects how an adult actually studies."
 H3 (the proof)       →  the syllabus-of-one card on the right of the hero

@@ -16,7 +16,7 @@ Three journeys, each from first contact to recurring use. The system is designed
 
 ## Journey 2 — Diego, the PM who already has a tutor
 
-**Discovery (T0).** Diego's private Spanish tutor (Lola, in Mexico City) emails him a screenshot of a Twitter thread that mentions Reading List. He clicks. He reads the hero with skepticism — he has been burned by Babbel and Duolingo. He scrolls to the pricing. He sees the **coach-augmented** tier at $299/month. He reads the bullet "30-minute live tutoring call once per week" and feels suspicious.
+**Discovery (T0).** Diego's private Spanish tutor (Lola, in Mexico City) emails him a screenshot of a Twitter thread that mentions Curriculum7. He clicks. He reads the hero with skepticism — he has been burned by Babbel and Duolingo. He scrolls to the pricing. He sees the **coach-augmented** tier at $299/month. He reads the bullet "30-minute live tutoring call once per week" and feels suspicious.
 
 **Return (T+3 d, with a question).** He emails `tutor@personalized-courses.prin7r.com` with: "Can the tutor be the one I already have, paid through my account here?" The studio replies in ten hours: "Yes, if Lola opts in. We sign her up as a 'studio tutor', she takes 70% of the coached-tier fee, we take 30%, and we run the syllabus + grading. Send us her email."
 
@@ -28,7 +28,7 @@ Three journeys, each from first contact to recurring use. The system is designed
 
 ## Journey 3 — Hannah, the eng manager buying for a 5-person study group
 
-**Discovery (T0).** Hannah is a senior engineering manager at a 200-person company in Berlin. Her L&D budget got slashed; her team's Coursera-for-Business renewal is due in six weeks. She asks in the engineering managers' Slack: "Anyone using something other than Coursera for self-directed learning?" An older manager replies with a link to Reading List.
+**Discovery (T0).** Hannah is a senior engineering manager at a 200-person company in Berlin. Her L&D budget got slashed; her team's Coursera-for-Business renewal is due in six weeks. She asks in the engineering managers' Slack: "Anyone using something other than Coursera for self-directed learning?" An older manager replies with a link to Curriculum7.
 
 **Return (T+1 d).** Hannah scrolls to the "For teams · for tutors" block in the pricing section. She emails `cohorts@personalized-courses.prin7r.com` asking about a five-seat cohort. The studio replies: "$35/seat/month, minimum five seats, twelve-month commitment. Each engineer declares their own goal. We can run a Wednesday round-robin if you want shared ritual."
 
@@ -48,4 +48,4 @@ In each journey, the conversion path is:
 4. The FAQ is read carefully, especially "Is this just an LLM?".
 5. The buyer either (a) clicks **Take ${tier} →** and pays, or (b) emails the desk and pays after one round of human reassurance.
 
-Reading List is built for the second path as well as the first. The desk replies within ten hours, hand-wires invoices when needed, and treats every email as part of the product.
+Curriculum7 is built for the second path as well as the first. The desk replies within ten hours, hand-wires invoices when needed, and treats every email as part of the product.

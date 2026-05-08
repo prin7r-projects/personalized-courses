@@ -1,10 +1,10 @@
-# DESIGN.md — Reading List
+# DESIGN.md — Curriculum7
 
 > The canonical design + style guide for `personalized-courses.prin7r.com`. Owned by Chief of Design. Kept in sync with the code in `apps/landing/`. Any change to the landing updates this file in the same commit.
 
 ## 1. Product and audience
 
-**Reading List** is a personalized-course studio for self-directed adult learners — primarily senior individual contributors, working professionals, and private-tutor clients who have bounced off Coursera, Udemy, and YouTube content libraries. The product is a syllabus-of-one: a custom course built around the buyer's declared goal and current level, dripped weekly, graded against a rubric the buyer saw at intake.
+**Curriculum7** is a personalized-course studio for self-directed adult learners — primarily senior individual contributors, working professionals, and private-tutor clients who have bounced off Coursera, Udemy, and YouTube content libraries. The product is a syllabus-of-one: a custom course built around the buyer's declared goal and current level, dripped weekly, graded against a rubric the buyer saw at intake.
 
 The audience profile is fully documented in `/docs/05-audience-profile.md`. The TL;DR for the design: the buyer is a 28–48-year-old reader with a credit card or a USDC wallet, an unfinished bookshelf, a deadline, and a low tolerance for "AI hype" framing. They expect editorial restraint, not enthusiasm.
 
@@ -34,7 +34,7 @@ All other UI elements (navigation, FAQ disclosure, pricing tier grid) are plain 
 
 ## 4. Color tokens
 
-Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properties in `apps/landing/app/globals.css`. Refresh 2026-05-08: the palette is now an 18-token system: 10 Anthropic-derived neutrals (canvas swapped to milky `#FAFAF8`) + 3 Reading List ink tokens (walnut/oak/sepia) + 4 Reading List semantic accents + clay (Anthropic terracotta) reserved for Anthropic-flavored CTAs.
+Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properties in `apps/landing/app/globals.css`. Refresh 2026-05-08: the palette is now an 18-token system: 10 Anthropic-derived neutrals (canvas swapped to milky `#FAFAF8`) + 3 Curriculum7 ink tokens (walnut/oak/sepia) + 4 Curriculum7 semantic accents + clay (Anthropic terracotta) reserved for Anthropic-flavored CTAs.
 
 | Role | Token | Hex | Where used |
 |---|---|---|---|
@@ -48,9 +48,9 @@ Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properti
 | tertiary text                  | `slate-light`   | `#5E5D59`  | tertiary text, captions, footer secondary |
 | dark border                    | `slate-medium`  | `#3D3D3A`  | mid-dark borders, focus rings on light surfaces |
 | dark surface                   | `slate-dark`    | `#141413`  | primary dark text + `.feature-dark` card surface — Anthropic's foreground+background dual-purpose color |
-| ink (primary)                  | `walnut`        | `#3A2A1A`  | headings, navigation, primary text, buttons (Reading List signature ink — kept) |
-| body                           | `oak`           | `#5C4327`  | long passages, descriptions, FAQ answers (Reading List ink chain) |
-| muted                          | `sepia`         | `#8A6E45`  | mono kickers, captions, dates (Reading List ink chain) |
+| ink (primary)                  | `walnut`        | `#3A2A1A`  | headings, navigation, primary text, buttons (Curriculum7 signature ink — kept) |
+| body                           | `oak`           | `#5C4327`  | long passages, descriptions, FAQ answers (Curriculum7 ink chain) |
+| muted                          | `sepia`         | `#8A6E45`  | mono kickers, captions, dates (Curriculum7 ink chain) |
 | accent (gilt)                  | `gilt`          | `#A87E2C`  | hairlines, eyebrow rules, focus rings, "Most popular" border |
 | editorial                      | `marginalia`    | `#A4321F`  | margin notes, button hover, pricing-callout vertical rule |
 | affirmative                    | `scholar`       | `#3F5A3F`  | reserved for `apps/app/` "passed" / "completed" markers |
@@ -69,13 +69,13 @@ Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properti
 
 ## 5. Typography
 
-Locked in `tailwind.config.ts`'s `fontFamily` extension and imported in `globals.css` from Google Fonts. The four-family Reading List system is now anchored to the Anthropic typographic mechanic (serif-grotesque pairing, mono for metadata) plus the Reading List signature handwritten Caveat margin notes.
+Locked in `tailwind.config.ts`'s `fontFamily` extension and imported in `globals.css` from Google Fonts. The four-family Curriculum7 system is now anchored to the Anthropic typographic mechanic (serif-grotesque pairing, mono for metadata) plus the Curriculum7 signature handwritten Caveat margin notes.
 
 | Family           | Token          | Anthropic role analog | Used for                                                |
 |---|---|---|---|
 | EB Garamond      | `font-display` | Anthropic Serif       | All headings · long-form body · tier prices · `.feature-dark` display |
 | Inter            | `font-sans`    | Anthropic Sans        | UI button labels · CTAs · email-style stamps           |
-| Caveat           | `font-margin`  | (Reading List signature, no Anthropic analog) | Handwritten margin notes (`.margin-note`, `.handwritten`) |
+| Caveat           | `font-margin`  | (Curriculum7 signature, no Anthropic analog) | Handwritten margin notes (`.margin-note`, `.handwritten`) |
 | JetBrains Mono   | `font-mono`    | Anthropic Mono        | Kickers, dates, course numbers, footer plates          |
 
 **Type scale**
@@ -219,7 +219,7 @@ Every section has a kicker → eyebrow rule → H2 → optional lede header (via
 - Tab order: masthead nav → primary CTA → hero CTAs → "how it works" cards → sample syllabus links → pricing tier CTAs → cohort mailto → testimonial mailtos → FAQ disclosures → footer mailtos. Focus is always visible.
 - All interactive elements have either visible labels or `aria-label`.
 - The hero `<aside>` showing the syllabus card is `aria-label="A sample syllabus card built around a real goal"` so screen readers know it's editorial decoration of the same content presented in `#sample`.
-- All images have alt text. The brand mark in the masthead is wrapped in a Logo anchor with `aria-label="Reading List — home"`. The SVG inside the anchor is `aria-hidden="true"` because the `aria-label` covers semantics.
+- All images have alt text. The brand mark in the masthead is wrapped in a Logo anchor with `aria-label="Curriculum7 — home"`. The SVG inside the anchor is `aria-hidden="true"` because the `aria-label` covers semantics.
 - All headings are in correct nesting order (one H1 per page; H2 starts each section; H3 inside lessons / module rows).
 - Form fields (Wave 3) will follow the same focus + label rules.
 
@@ -272,5 +272,18 @@ node -e '
 
 ## 15. Changelog
 
+- **2026-05-08 · rebrand — Reading List → Curriculum7** — FAIL on undefendable
+  English-words wordmark. "Reading List" is two of the most common English
+  words in any book/learning context and is also Apple Safari's bookmarking
+  feature; the wordmark could not be reliably owned in SERP, social, or app
+  stores. New brand is **Curriculum7** at `curriculum7.com` (verified
+  AVAILABLE). The "7" matches the prin7r/Triad7 brand lineage. Monogram
+  updated `RL` → `C7`. Wordmark updated `reading list.` → `curriculum7.` in
+  Logo + brand stamp. Order id prefix renamed `readinglist_` → `curriculum7_`
+  in `lib/nowpayments.ts`. Tutor's-notebook visual frame, walnut/oak/sepia
+  ink chain, gilt/marginalia accents, EB Garamond display + Caveat margin
+  notes — all preserved unchanged. Editorial uses of generic English "reading
+  list" / "reading lists" inside personas + voices + footnotes were preserved
+  per the no-overreach rule (only brand wordmark replaced).
 - **2026-05-08 · v0.1.0** — Initial Wave 2 build. Library-shelf brand locked. Landing live at `personalized-courses.prin7r.com`. NOWPayments hosted-invoice CTA wired on three tiers. 10 strategy docs + this DESIGN.md committed. Production screenshots captured at 1440×900 + 390×844.
-- **2026-05-08 · design refresh — anthropic with milky-canvas adaptation** — Lifted full Anthropic palette (10 ivory/slate neutrals + clay terracotta accent reserve) onto the Reading List ink chain (walnut/oak/sepia kept; gilt/marginalia/scholar accents kept). The most important fix: `vellum` was a beige `#EADFC2` in violation of the no-beige rule — replaced with Anthropic paper-2 milky-ivory `#F0EEE6`. Token count grew from 8 → 18. Components added: `.emph-underline` (3px word-level underline emphasis — Anthropic's primary mechanic, replacing color highlights on headline keywords), `.feature-dark` (24px-radius near-black editorial card with EB Garamond 91px display per Anthropic surface alternation system), `.btn-asymmetric` (the Anthropic 0/0/8/8 flat-top rounded-bottom CTA). Display scale rebalanced to Anthropic 91px / line-height 1.05; masthead h1 to 61px / line-height 1.1. Page logo `RL` plate fill changed from `#F4ECD8` (beige) to `#FAFAF8` (milky). Paper-grain radial wash softened (was warm beige, now near-imperceptible cool wash). Brand essence (tutor's notebook on milky stone) re-anchored in §2.
+- **2026-05-08 · design refresh — anthropic with milky-canvas adaptation** — Lifted full Anthropic palette (10 ivory/slate neutrals + clay terracotta accent reserve) onto the Curriculum7 ink chain (walnut/oak/sepia kept; gilt/marginalia/scholar accents kept). The most important fix: `vellum` was a beige `#EADFC2` in violation of the no-beige rule — replaced with Anthropic paper-2 milky-ivory `#F0EEE6`. Token count grew from 8 → 18. Components added: `.emph-underline` (3px word-level underline emphasis — Anthropic's primary mechanic, replacing color highlights on headline keywords), `.feature-dark` (24px-radius near-black editorial card with EB Garamond 91px display per Anthropic surface alternation system), `.btn-asymmetric` (the Anthropic 0/0/8/8 flat-top rounded-bottom CTA). Display scale rebalanced to Anthropic 91px / line-height 1.05; masthead h1 to 61px / line-height 1.1. Page logo `RL` plate fill changed from `#F4ECD8` (beige) to `#FAFAF8` (milky). Paper-grain radial wash softened (was warm beige, now near-imperceptible cool wash). Brand essence (tutor's notebook on milky stone) re-anchored in §2.

@@ -4,7 +4,7 @@ A 10-slide deck for an investor or partner conversation. Each slide is a heading
 
 ## Slide 1 — Title
 
-**Reading List**
+**Curriculum7**
 A syllabus of one. A private tutor's reading list, written for one student and dripped weekly.
 
 - Wave 2 of `prin7r-projects` · 2026
@@ -33,7 +33,7 @@ We exist for Mara. The studio is sized to serve her.
 
 ## Slide 4 — The product
 
-Reading List takes one declared goal and one paragraph of context, and produces:
+Curriculum7 takes one declared goal and one paragraph of context, and produces:
 
 - A personalized syllabus on a single page (4 modules max).
 - A weekly drip (Mondays 09:00 buyer's local time).
@@ -85,18 +85,18 @@ Break-even target: month 6 cumulative.
 
 ## Slide 9 — The team & the studio
 
-Reading List is built inside `prin7r-projects`, a vertically-integrated studio that ships small, sustainable revenue products on weekly cadence. The studio shares:
+Curriculum7 is built inside `prin7r-projects`, a vertically-integrated studio that ships small, sustainable revenue products on weekly cadence. The studio shares:
 
 - A common payments rail (NOWPayments, Plisio).
 - A common deploy host (`storage-contabo`).
 - A common brand-identity discipline.
 - A common editorial voice across products.
 
-Reading List staff (Wave 3+): one lead pedagogue, two part-time editors, three part-time graders, an open tutor-affiliate pool. Lean by design.
+Curriculum7 staff (Wave 3+): one lead pedagogue, two part-time editors, three part-time graders, an open tutor-affiliate pool. Lean by design.
 
 ## Slide 10 — The ask
 
-Reading List is bootstrapped inside the studio. We are not raising. We are publishing the deck so:
+Curriculum7 is bootstrapped inside the studio. We are not raising. We are publishing the deck so:
 
 - **Tutors** can opt into the affiliate program at `tutor@personalized-courses.prin7r.com`.
 - **Engineering managers** can email cohort enquiries at `cohorts@personalized-courses.prin7r.com`.

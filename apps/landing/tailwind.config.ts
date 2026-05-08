@@ -1,12 +1,12 @@
 import type { Config } from "tailwindcss";
 
 /**
- * [READING_LIST_TAILWIND] Locked tokens for the personalized-courses landing.
+ * [CURRICULUM7_TAILWIND] Locked tokens for the personalized-courses landing.
  *
  * Aesthetic: a private tutor's notebook on milky stone — a lifted Anthropic
  * palette (ivory neutrals + dark feature cards + word-level underline
  * emphasis) with the canvas swapped to milky `#FAFAF8` per the no-beige rule.
- * Reading List anchors retained: walnut/oak/sepia ink chain, gilt + marginalia
+ * Curriculum7 anchors retained: walnut/oak/sepia ink chain, gilt + marginalia
  * accents, Caveat margin notes.
  *
  * Refresh 2026-05-08 — vellum hex was beige `#EADFC2` and is now milky-ivory
@@ -33,11 +33,11 @@ const config: Config = {
         "slate-light": "#5E5D59",
         "slate-medium": "#3D3D3A",
         "slate-dark": "#141413",
-        // Reading List ink chain (kept)
+        // Curriculum7 ink chain (kept)
         walnut: "#3A2A1A",
         oak: "#5C4327",
         sepia: "#8A6E45",
-        // Reading List accents
+        // Curriculum7 accents
         gilt: "#A87E2C",
         marginalia: "#A4321F",
         scholar: "#3F5A3F",
@@ -49,7 +49,7 @@ const config: Config = {
         display: ["EB Garamond", "Garamond", "Georgia", "serif"],
         // Clean grotesque for UI labels (Anthropic Sans analog)
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        // Handwritten margin notes (Reading List signature)
+        // Handwritten margin notes (Curriculum7 signature)
         margin: ['"Caveat"', "Georgia", "serif"],
         // Mono for kickers / dates (Anthropic Mono analog)
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"]

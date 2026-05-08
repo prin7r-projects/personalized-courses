@@ -84,7 +84,7 @@ flowchart LR
 1. Buyer clicks the **Take ${tier} →** button on the landing.
 2. `pricing-cta.tsx` POSTs `{ plan }` to `/api/checkout/nowpayments`.
 3. Route handler validates `plan ∈ {single, subscription, coached}`, looks up `PLANS[plan]`, and computes `baseUrl`.
-4. Server module `createNowpaymentsInvoice` calls `POST https://api.nowpayments.io/v1/invoice` with the API key from `NOWPAYMENTS_API_KEY` and a synthetic `order_id` of shape `readinglist_<plan>_<ts>_<rand>`.
+4. Server module `createNowpaymentsInvoice` calls `POST https://api.nowpayments.io/v1/invoice` with the API key from `NOWPAYMENTS_API_KEY` and a synthetic `order_id` of shape `curriculum7_<plan>_<ts>_<rand>`.
 5. NOWPayments returns `{ id, invoice_url, ... }`. The route handler returns `{ invoice_url, invoice_id, ... }`.
 6. Client redirects the browser to the hosted invoice page.
 7. NOWPayments calls `POST /api/webhooks/nowpayments` once the invoice is paid (or otherwise transitions). The handler reads `x-nowpayments-sig`, recomputes HMAC-SHA512 over the alphabetically-sorted JSON, and accepts only on a timing-safe match.

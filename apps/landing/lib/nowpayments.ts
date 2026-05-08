@@ -1,5 +1,5 @@
 /**
- * [READING_LIST_NOWPAYMENTS] Server-side helpers for the NOWPayments hosted invoice.
+ * [CURRICULUM7_NOWPAYMENTS] Server-side helpers for the NOWPayments hosted invoice.
  *
  * - `PLANS` maps the three pricing tiers visible on the landing to their USD
  *   price + checkout copy. Wave 2 charges the up-front course fee (single
@@ -27,7 +27,7 @@ export type Plan = {
 export const PLANS: Record<PlanId, Plan> = {
   single: {
     id: "single",
-    name: "Reading List — Single course",
+    name: "Curriculum7 — Single course",
     priceUsd: 149,
     cadence: "one-time",
     description:
@@ -35,7 +35,7 @@ export const PLANS: Record<PlanId, Plan> = {
   },
   subscription: {
     id: "subscription",
-    name: "Reading List — Standing subscription",
+    name: "Curriculum7 — Standing subscription",
     priceUsd: 39,
     cadence: "monthly",
     description:
@@ -43,7 +43,7 @@ export const PLANS: Record<PlanId, Plan> = {
   },
   coached: {
     id: "coached",
-    name: "Reading List — Coach-augmented",
+    name: "Curriculum7 — Coach-augmented",
     priceUsd: 299,
     cadence: "monthly",
     description:
@@ -77,7 +77,7 @@ export async function createNowpaymentsInvoice(input: CreateInvoiceInput): Promi
   const sandbox = (optionalEnv("NOWPAYMENTS_SANDBOX") ?? "false").toLowerCase() === "true";
   const apiBase = sandbox ? "https://api-sandbox.nowpayments.io" : "https://api.nowpayments.io";
 
-  const orderId = `readinglist_${input.plan.id}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const orderId = `curriculum7_${input.plan.id}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
   const body = {
     price_amount: input.plan.priceUsd,

@@ -84,7 +84,7 @@
   - Crossref / OpenLibrary lookup p95 < 800ms.
   - No drip ever leaves the system with a red-flagged reading (test by injecting a hallucinated
      ISBN and verifying the drip stays unsent).
-- **Hand-off context.** Crossref is polite-pool; set the `User-Agent: Reading List
+- **Hand-off context.** Crossref is polite-pool; set the `User-Agent: Curriculum7
   (mailto:hi@reading-list.prin7r.com)`. Cache hits 24h; misses 1h.
 
 ## Phase 4 — Drip cron + grade loop

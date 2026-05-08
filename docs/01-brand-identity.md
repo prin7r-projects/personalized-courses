@@ -9,7 +9,7 @@
 
 ## Positioning statement
 
-> For self-directed adult learners who have bounced off Coursera, Udemy, and YouTube boilerplate, **Reading List** is a personalized-course studio that turns one declared goal and one paragraph of context into a short, fully-graded syllabus dripped at a sustainable pace — unlike content marketplaces that sell you the same course as a million other students, because we build the course around your specific ignorance and your specific deadline.
+> For self-directed adult learners who have bounced off Coursera, Udemy, and YouTube boilerplate, **Curriculum7** is a personalized-course studio that turns one declared goal and one paragraph of context into a short, fully-graded syllabus dripped at a sustainable pace — unlike content marketplaces that sell you the same course as a million other students, because we build the course around your specific ignorance and your specific deadline.
 
 ## Audience persona — primary
 
@@ -47,7 +47,7 @@
 
 **Sample sentence**
 
-> "Tell us your goal in one sentence and your current level in two. Reading List answers with a syllabus written for one student — readings, exercises, evaluations — dripped at a pace that respects how an adult studies."
+> "Tell us your goal in one sentence and your current level in two. Curriculum7 answers with a syllabus written for one student — readings, exercises, evaluations — dripped at a pace that respects how an adult studies."
 
 ## Visual system
 
@@ -73,14 +73,14 @@
 
 **Logo concept**
 
-A walnut square plate, EB Garamond `RL` foil-stamped in parchment, a single gilt rule across the bottom. Nothing else. The wordmark `reading list.` runs to the right of it in mono, with a marginalia-red period — a small stamp at the end of a sentence.
+A walnut square plate, EB Garamond `C7` foil-stamped in parchment, a single gilt rule across the bottom. Nothing else. The wordmark `curriculum7.` runs to the right of it in mono, with a marginalia-red period — a small stamp at the end of a sentence.
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect x="0" y="0" width="64" height="64" rx="2" fill="#3A2A1A"/>
   <text x="32" y="44" text-anchor="middle"
         font-family="EB Garamond, Georgia, serif"
-        font-weight="600" font-size="34" fill="#F4ECD8">RL</text>
+        font-weight="600" font-size="34" fill="#F4ECD8">C7</text>
   <rect x="14" y="52" width="36" height="2" fill="#A87E2C"/>
 </svg>
 ```

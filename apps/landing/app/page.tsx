@@ -61,7 +61,7 @@ function Masthead() {
 
 function Logo() {
   return (
-    <a href="#hero" className="flex items-center gap-3" aria-label="Reading List — home">
+    <a href="#hero" className="flex items-center gap-3" aria-label="Curriculum7 — home">
       <span aria-hidden="true" className="inline-block">
         <svg width="34" height="34" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="64" height="64" rx="2" fill="#3A2A1A" />
@@ -74,13 +74,13 @@ function Logo() {
             fontSize="34"
             fill="#FAFAF8"
           >
-            RL
+            C7
           </text>
           <rect x="14" y="52" width="36" height="2" fill="#A87E2C" />
         </svg>
       </span>
       <span className="font-mono text-[12px] tracking-ledger uppercase text-walnut">
-        reading list<span className="text-marginalia">.</span>
+        curriculum7<span className="text-marginalia">.</span>
       </span>
     </a>
   );
@@ -105,7 +105,7 @@ function Hero() {
             </h1>
             <p className="mt-8 max-w-2xl font-display text-[20px] md:text-[23px] text-oak leading-snug">
               Tell us your goal in one sentence and your current level in two.
-              Reading List answers with a personalized course — readings, videos,
+              Curriculum7 answers with a personalized course — readings, videos,
               exercises, evaluations — generated for you and dripped at a pace
               that respects how an adult actually studies. No 47-hour mega-modules.
               No certificate-chasing. One page at a time.
@@ -517,7 +517,7 @@ function Pricing() {
         <SectionHeader
           eyebrow="Three ways in"
           title="Buy a course or keep one going."
-          lede="Pricing is small on purpose. Reading List exists because adult learners are over-charged by edtech and under-served by it. We charge what a private tutor's reading list is worth, not what a marketing department thinks a 'cohort' is worth."
+          lede="Pricing is small on purpose. Curriculum7 exists because adult learners are over-charged by edtech and under-served by it. We charge what a private tutor's reading list is worth, not what a marketing department thinks a 'cohort' is worth."
         />
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -598,13 +598,13 @@ function Voices() {
   const voices = [
     {
       quote:
-        "I had bounced off three Rust courses. Reading List asked me what I knew, then sent me a syllabus I actually finished. The borrow-checker stopped feeling like an enemy somewhere around module two.",
+        "I had bounced off three Rust courses. Curriculum7 asked me what I knew, then sent me a syllabus I actually finished. The borrow-checker stopped feeling like an enemy somewhere around module two.",
       who: "Backend engineer, Lisbon · single-course graduate",
       tag: "ship a Rust CLI in 30 days"
     },
     {
       quote:
-        "My tutor used to mail me reading lists. Reading List does that, but it grades the homework. I keep the subscription and rotate goals every quarter — Spanish in spring, statistics in summer.",
+        "My tutor used to mail me reading lists. Curriculum7 does that, but it grades the homework. I keep the subscription and rotate goals every quarter — Spanish in spring, statistics in summer.",
       who: "Product manager, Mexico City · subscription · second year",
       tag: "B1 → B2 Spanish"
     },
@@ -622,7 +622,7 @@ function Voices() {
         <SectionHeader
           eyebrow="Voices"
           title="What students actually say."
-          lede="Three real-shape testimonials. Reading List is a young product — these are paraphrased from intake notes and end-of-course self-evaluations, with permission. Names withheld. Cohort details accurate."
+          lede="Three real-shape testimonials. Curriculum7 is a young product — these are paraphrased from intake notes and end-of-course self-evaluations, with permission. Names withheld. Cohort details accurate."
         />
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           {voices.map((v) => (
@@ -650,7 +650,7 @@ function Faq() {
   const items: Array<{ q: string; a: string }> = [
     {
       q: "How is this different from Coursera, Udemy, or a YouTube playlist?",
-      a: "Those are content libraries — they sell you a course someone else built for an imaginary average student. Reading List builds the course from scratch around your declared goal and your current level, then cuts the parts you already know. Most students finish; on the open platforms, fewer than 5% do. We trade scale for fit."
+      a: "Those are content libraries — they sell you a course someone else built for an imaginary average student. Curriculum7 builds the course from scratch around your declared goal and your current level, then cuts the parts you already know. Most students finish; on the open platforms, fewer than 5% do. We trade scale for fit."
     },
     {
       q: "Is this just an LLM that writes lesson plans?",
@@ -702,7 +702,7 @@ function Footer() {
         <div className="md:col-span-6 flex flex-col gap-4">
           <Logo />
           <p className="max-w-md text-[15px] text-oak leading-snug">
-            Reading List is an agent-native learning studio. We build personalized
+            Curriculum7 is an agent-native learning studio. We build personalized
             courses around one declared goal, deliver them on a schedule that
             respects how an adult studies, and grade the work against a rubric you
             saw at intake. Built in 2026 by the prin7r-projects studio.

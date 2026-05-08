@@ -1,6 +1,6 @@
 # 12 · Technical specification
 
-> Reading List = Wave 2 landing (NOWPayments + intake hand-off) + Wave 3 SaaS (Wasp / Open-SaaS,
+> Curriculum7 = Wave 2 landing (NOWPayments + intake hand-off) + Wave 3 SaaS (Wasp / Open-SaaS,
 > Postgres, drip + grade workers). Doc 02 is the runtime sketch; this doc is the implementer's
 > contract.
 

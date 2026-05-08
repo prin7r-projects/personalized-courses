@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 /* ---------------------------------------------------------------------------
-   [READING_LIST_GLOBALS] Tutor's notebook on milky stone.
+   [CURRICULUM7_GLOBALS] Tutor's notebook on milky stone.
    Refresh 2026-05-08 — palette + type lifted from the Anthropic reference
    (warm-stone ivory page → milky #FAFAF8 per no-beige rule, near-black
    #141413 dark cards, serif-grotesque pairing, word-level underline as the
-   primary emphasis device replacing color highlights). Reading List anchors
+   primary emphasis device replacing color highlights). Curriculum7 anchors
    retained: gilt accent, marginalia red, Caveat handwritten margin notes.
    The vellum hex was #EADFC2 (forbidden beige); it is now `paper-2 #F0EEE6`
    per the no-beige rule — a barely-warm secondary surface, not a tan band.
@@ -28,12 +28,12 @@
   --slate-medium: #3D3D3A;   /* mid-dark borders, focus rings */
   --slate-dark:   #141413;   /* primary text, dark feature card surface */
 
-  /* Reading List ink chain (kept — walnut/oak/sepia carry the tutor's-notebook voice on top of the Anthropic neutrals) */
+  /* Curriculum7 ink chain (kept — walnut/oak/sepia carry the tutor's-notebook voice on top of the Anthropic neutrals) */
   --walnut:    #3A2A1A;   /* the ink — heaviest text on the milky page */
   --oak:       #5C4327;   /* body text in long passages */
   --sepia:     #8A6E45;   /* muted captions, kickers */
 
-  /* Reading List semantic accents (kept; sparingly applied per Anthropic single-accent-per-section rule) */
+  /* Curriculum7 semantic accents (kept; sparingly applied per Anthropic single-accent-per-section rule) */
   --gilt:        #A87E2C;   /* gold hairline / eyebrow rule */
   --marginalia:  #A4321F;   /* editor's red pen — sparingly */
   --scholar:     #3F5A3F;   /* "completed" / affirmative marker */

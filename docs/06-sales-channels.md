@@ -23,11 +23,11 @@ We **do not** use:
 
 ### 1. Hacker News + technical subreddits
 
-**Tactic.** Once per quarter, the studio publishes a _public_ syllabus on the website (CC-BY) — e.g. "Ship a Rust CLI in 30 days" with all named readings, exercises, and rubrics open. The post is signed by the lead pedagogue, references the Reading List home page once at the bottom, and otherwise behaves like a useful artifact. The HN front page is downstream of useful artifacts.
+**Tactic.** Once per quarter, the studio publishes a _public_ syllabus on the website (CC-BY) — e.g. "Ship a Rust CLI in 30 days" with all named readings, exercises, and rubrics open. The post is signed by the lead pedagogue, references the Curriculum7 home page once at the bottom, and otherwise behaves like a useful artifact. The HN front page is downstream of useful artifacts.
 
 **Conversion model.** ~3% of HN visitors land on the home page; ~5% of those click a pricing tier; ~30% of those complete a NOWPayments invoice. ≈ 5 paying buyers per 10 K HN readers.
 
-**Why this fits.** HN punishes self-promotion. It rewards craft. Reading List's brand voice _is_ the marketing — there is no other tonal mode.
+**Why this fits.** HN punishes self-promotion. It rewards craft. Curriculum7's brand voice _is_ the marketing — there is no other tonal mode.
 
 ### 2. Private Telegram engineering chats
 

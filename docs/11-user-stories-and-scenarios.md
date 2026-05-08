@@ -1,6 +1,6 @@
 # 11 · User stories and scenarios
 
-> Reading List is a personalized-course studio. This document drives both frontend (apps/landing,
+> Curriculum7 is a personalized-course studio. This document drives both frontend (apps/landing,
 > the future apps/app intake) and backend (drip workers, syllabus generator, grader) by enumerating
 > who shows up, what they want to do, what they get, and what we never build.
 
@@ -14,14 +14,14 @@
   Has a respected human tutor (paper reading lists, twice a month) but the tutor doesn't scale.
   Pays in USD or USDC; cross-border friction is the trigger to try crypto rails. — see
   `05-audience-profile.md` §Diego.
-- **Reading List Studio (operator).** The Prin7r-side human-in-the-loop curator who approves
+- **Curriculum7 Studio (operator).** The Prin7r-side human-in-the-loop curator who approves
   syllabi before they drip, watches the rubric pass, and intervenes on flagged grades. Acts on
   the editorial guarantee that no course goes out without an editor's name on it.
 
 ## 2. Primary user stories (12)
 
 1. **As Mara**, I want to read a one-screen pitch and the three tier prices, so that I can decide
-   in under 60 seconds whether Reading List is even in my price range.
+   in under 60 seconds whether Curriculum7 is even in my price range.
 2. **As Mara**, I want to pay with USDC without giving a credit card or signing up for an account
    first, so that I can convert from a Hacker News tab without a friction wall.
 3. **As Mara**, I want to declare my goal in one sentence and my current level in two paragraphs,
@@ -42,12 +42,12 @@
    one travel disruption doesn't invalidate the whole study plan.
 9. **As Mara**, I want a single visible refund window (30 days, no questions asked through drip 3),
    so that paying $399 does not feel like a leap.
-10. **As Reading List Studio operator**, I want to see a queue of "syllabi awaiting editor sign-off"
+10. **As Curriculum7 Studio operator**, I want to see a queue of "syllabi awaiting editor sign-off"
     sorted by deadline, so that I can act on the freshest ones first.
-11. **As Reading List Studio operator**, I want every cited reading to be machine-verified
+11. **As Curriculum7 Studio operator**, I want every cited reading to be machine-verified
     (Crossref, OpenLibrary, GitHub) before the syllabus reaches the student, so that I never
     embarrass the studio with a hallucinated title.
-12. **As Reading List Studio operator**, I want graded submissions to be flagged when the model's
+12. **As Curriculum7 Studio operator**, I want graded submissions to be flagged when the model's
     confidence is below 0.7 OR the rubric coverage is below 80%, so that I can intervene before
     the student receives a weak grade.
 
@@ -78,7 +78,7 @@
 
 ### Scenario B — Diego buys via card-fallback link, requests Spanish
 
-1. **Trigger.** Diego's tutor recommends Reading List in WhatsApp.
+1. **Trigger.** Diego's tutor recommends Curriculum7 in WhatsApp.
 2. **Step 1.** Diego lands on `/`, reads the positioning, decides Studio Plus ($899) gives him
    live editor calls.
 3. **Step 2.** Clicks "Start a course." Crypto checkout offered first; Diego clicks "Card or
@@ -185,5 +185,5 @@ The product explicitly does **not** do these things, even when asked:
    "starts October 14, ends December 9" cohorts.
 4. **No AI-tutor chatbot in the student inbox.** Grading is async and editorial. We will not ship a
    real-time chatbot in the drip emails.
-5. **No marketplace of courses by other authors.** Reading List is the studio. Every syllabus has
-   a Reading List editor's name on it.
+5. **No marketplace of courses by other authors.** Curriculum7 is the studio. Every syllabus has
+   a Curriculum7 editor's name on it.

@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   [READING_LIST_GLOBALS] Library-shelf baseline — a private tutor's notebook.
+   Palette + type system documented in /DESIGN.md sections 4-6.
+   Five colors, four families, square edges, one shadow, two animations.
+   --------------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Caveat:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --parchment: #F4ECD8;
+  --vellum: #EADFC2;
+  --walnut: #3A2A1A;
+  --oak: #5C4327;
+  --sepia: #8A6E45;
+  --gilt: #A87E2C;
+  --marginalia: #A4321F;
+  --scholar: #3F5A3F;
+}
+
+html {
+  background: var(--parchment);
+  color: var(--walnut);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-size: 17.5px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  background: var(--parchment);
+  color: var(--walnut);
+}
+
+/* Paper grain — a subtle radial wash that mimics aged stock without an image. */
+.grain {
+  background:
+    radial-gradient(1200px 600px at 18% 8%, rgba(168,126,44,.05), transparent 60%),
+    radial-gradient(900px 480px at 92% 110%, rgba(164,50,31,.04), transparent 60%),
+    var(--parchment);
+}
+
+::selection {
+  background: var(--marginalia);
+  color: var(--parchment);
+}
+
+/* Focus ring — gilt outline, 2px offset. */
+:focus-visible {
+  outline: 1.5px solid var(--gilt);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link, hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: var(--walnut);
+  color: var(--parchment);
+  padding: 8px 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 100;
+}
+.skip-link:focus { left: 8px; }
+
+/* --- Local components ---------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--walnut);
+  color: var(--parchment);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--walnut);
+  text-decoration: none;
+  transition: background 100ms linear, border-color 100ms linear, color 100ms linear;
+  cursor: pointer;
+}
+.btn:hover { background: var(--marginalia); border-color: var(--marginalia); color: var(--parchment); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--walnut);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--walnut);
+  text-decoration: none;
+  transition: background 100ms linear, color 100ms linear;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: var(--walnut); color: var(--parchment); }
+
+/* Mono kicker — UI labels, dates, plate numbers. */
+.kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.eyebrow-rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: var(--gilt);
+  margin: 16px 0;
+}
+
+.gilt-rule { height: 1px; background: var(--gilt); }
+.hairline { height: 1px; background: rgba(58,42,26,.16); }
+
+.section { border-bottom: 1px solid rgba(58,42,26,.14); }
+
+/* The "syllabus card" frame — the marquee element of the brand. */
+.syllabus-card {
+  position: relative;
+  background: var(--vellum);
+  border: 1px solid rgba(58,42,26,.22);
+  box-shadow: 0 8px 24px -16px rgba(58,42,26,.32);
+}
+.syllabus-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(58,42,26,.10);
+  pointer-events: none;
+}
+
+/* A walnut frame used on supporting cards (vellum on parchment). */
+.note-frame {
+  background: var(--parchment);
+  border: 1px solid rgba(58,42,26,.18);
+  position: relative;
+}
+.note-frame::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(58,42,26,.06);
+  pointer-events: none;
+}
+
+.margin-note {
+  font-family: "Caveat", Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--marginalia);
+  letter-spacing: 0;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+
+.handwritten {
+  font-family: "Caveat", Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--marginalia);
+  letter-spacing: 0;
+}
+
+.serif-italic {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.ink-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--marginalia);
+  border-radius: 50%;
+  animation: ink 1.6s ease-in-out infinite;
+}
+
+@keyframes ink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-dot { animation: none; opacity: 1; }
+}
+
+/* Tier card */
+.tier {
+  background: var(--parchment);
+  border: 1px solid rgba(58,42,26,.20);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+.tier::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(58,42,26,.06);
+  pointer-events: none;
+}
+.tier.featured {
+  background: var(--vellum);
+  border-color: var(--gilt);
+}
+.tier-name {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: -0.012em;
+  line-height: 1;
+  color: var(--walnut);
+}
+.tier-price {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.012em;
+  color: var(--walnut);
+}
+.tier-cadence {
+  margin-top: 4px;
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--oak);
+}
+.tier-features {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-size: 16.5px;
+  color: var(--oak);
+}
+.tier-features li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 8px;
+  line-height: 1.42;
+}
+.tier-features li::before {
+  content: "—";
+  color: var(--gilt);
+  font-weight: 500;
+}
+
+/* FAQ disclosure — a quiet ledger row */
+.faq {
+  border-top: 1px solid rgba(58,42,26,.16);
+  padding: 18px 0;
+}
+.faq:last-of-type { border-bottom: 1px solid rgba(58,42,26,.16); }
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--walnut);
+  letter-spacing: -0.005em;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  font-family: "JetBrains Mono", monospace;
+  color: var(--gilt);
+  font-size: 18px;
+  font-weight: 500;
+}
+.faq[open] summary::after { content: "−"; }
+.faq p {
+  margin-top: 12px;
+  max-width: 64ch;
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-size: 17px;
+  color: var(--oak);
+  line-height: 1.55;
+}

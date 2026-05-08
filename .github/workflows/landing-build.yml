@@ -1,0 +1,31 @@
+name: landing-build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/landing/**"
+      - "Dockerfile.landing"
+      - "docker-compose.yml"
+      - ".github/workflows/landing-build.yml"
+  pull_request:
+    paths:
+      - "apps/landing/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/landing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Enable Corepack
+        run: corepack enable && corepack prepare pnpm@9.15.4 --activate
+      - name: Install
+        run: pnpm install --frozen-lockfile=false
+      - name: Build
+        run: pnpm build

@@ -36,7 +36,7 @@ Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properti
 
 | Role             | Token         | Hex        | Where used                                                |
 |------------------|---------------|------------|-----------------------------------------------------------|
-| surface          | `parchment`   | `#F4ECD8`  | the page itself; `<html>` and `<body>` background         |
+| surface          | `parchment`   | `#FAFAF8`  | the page itself; `<html>` and `<body>` background         |
 | surface alt      | `vellum`      | `#EADFC2`  | cards on the parchment; `tier.featured` and the syllabus card |
 | ink (primary)    | `walnut`      | `#3A2A1A`  | headings, navigation, primary text, buttons               |
 | body             | `oak`         | `#5C4327`  | long passages, descriptions, FAQ answers                  |

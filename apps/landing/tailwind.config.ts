@@ -21,7 +21,7 @@ const config: Config = {
     extend: {
       colors: {
         // Library-shelf neutrals
-        parchment: "#F4ECD8",  // warm aged paper, the page itself
+        parchment: "#FAFAF8",  // warm aged paper, the page itself
         vellum: "#EADFC2",     // a lighter alternate page (cards on parchment)
         walnut: "#3A2A1A",     // the ink — heaviest text
         oak: "#5C4327",        // body text in long passages

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reading List — pitch deck</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Caveat:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --parchment: #F4ECD8;
+      --vellum:    #EADFC2;
+      --walnut:    #3A2A1A;
+      --oak:       #5C4327;
+      --sepia:     #8A6E45;
+      --gilt:      #A87E2C;
+      --marginalia:#A4321F;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--parchment); color: var(--walnut); }
+    body {
+      font-family: "EB Garamond", Garamond, Georgia, serif;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    .deck { display: flex; flex-direction: column; gap: 24px; padding: 32px; max-width: 1100px; margin: 0 auto; }
+    .slide {
+      background: var(--parchment);
+      border: 1px solid rgba(58,42,26,.18);
+      padding: 56px 64px;
+      min-height: 540px;
+      position: relative;
+      box-shadow: 0 8px 24px -16px rgba(58,42,26,.32);
+    }
+    .slide::before {
+      content: "";
+      position: absolute; inset: 12px;
+      border: 1px solid rgba(58,42,26,.06);
+      pointer-events: none;
+    }
+    .slide-meta {
+      position: absolute;
+      top: 24px; right: 32px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sepia);
+    }
+    .slide-no {
+      position: absolute;
+      top: 24px; left: 32px;
+      font-family: "EB Garamond", serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--gilt);
+      letter-spacing: -0.012em;
+    }
+    .kicker {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sepia);
+    }
+    .gilt-rule { width: 36px; height: 1.5px; background: var(--gilt); margin: 14px 0 22px 0; }
+    h1, h2 {
+      font-family: "EB Garamond", Garamond, Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.012em;
+      color: var(--walnut);
+      margin: 0;
+    }
+    h1 { font-size: 84px; line-height: 1.02; }
+    h2 { font-size: 50px; line-height: 1.05; margin-bottom: 12px; }
+    p { color: var(--oak); max-width: 60ch; margin: 0 0 12px 0; }
+    ul { color: var(--oak); padding-left: 22px; max-width: 60ch; }
+    li { margin: 8px 0; }
+    .lede { font-style: italic; font-size: 22px; color: var(--oak); }
+    .margin-note {
+      position: absolute; bottom: 32px; right: 56px;
+      font-family: "Caveat", Georgia, serif;
+      font-size: 24px; color: var(--marginalia);
+      transform: rotate(-2deg);
+    }
+    .keys {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 22px 36px;
+      margin-top: 18px;
+      max-width: 900px;
+    }
+    .keys .row { border-top: 1px solid rgba(58,42,26,.16); padding-top: 12px; }
+    .keys dt {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sepia); margin-bottom: 4px;
+    }
+    .keys dd { margin: 0; color: var(--walnut); font-size: 18px; }
+    a { color: var(--walnut); text-decoration: underline; text-decoration-color: var(--gilt); }
+    @media print {
+      body { background: white; }
+      .slide { page-break-after: always; box-shadow: none; }
+      .deck { padding: 0; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+
+    <section class="slide" aria-labelledby="s1">
+      <span class="slide-no">01</span>
+      <span class="slide-meta">Reading List · 2026</span>
+      <p class="kicker">A private tutor's notebook</p>
+      <span class="gilt-rule"></span>
+      <h1 id="s1">Reading List.</h1>
+      <p class="lede" style="margin-top:24px;">
+        A syllabus of one. A personalized course written for one student,
+        dripped weekly, graded against a rubric the student saw at intake.
+      </p>
+      <p style="margin-top:32px;">
+        <a href="https://personalized-courses.prin7r.com">personalized-courses.prin7r.com</a>
+      </p>
+      <span class="margin-note">— a syllabus of one.</span>
+    </section>
+
+    <section class="slide" aria-labelledby="s2">
+      <span class="slide-no">02</span>
+      <span class="slide-meta">The problem</span>
+      <p class="kicker">02 · The problem</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s2">Mass-market online learning has failed adult self-directed learners.</h2>
+      <ul>
+        <li>Coursera completion rates are below 5%.</li>
+        <li>Buyers have backlogs of unfinished courses they feel guilty about.</li>
+        <li>The mass-market course is built for an <em>imagined average student</em>, not a real one.</li>
+      </ul>
+      <p class="lede" style="margin-top:18px;">The crisis is not access. The crisis is fit.</p>
+    </section>
+
+    <section class="slide" aria-labelledby="s3">
+      <span class="slide-no">03</span>
+      <span class="slide-meta">The buyer</span>
+      <p class="kicker">03 · The buyer's reality</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s3">Mara, 34, backend engineer in Lisbon.</h2>
+      <ul>
+        <li>Wants to ship a Rust CLI in 30 days.</li>
+        <li>Has bought two Udemy courses, finished none.</li>
+        <li>Read half the Klabnik &amp; Nichols book; got stuck at lifetimes.</li>
+        <li>Has 4–6 hours of study a week, and a deadline.</li>
+        <li>Is willing to pay. Cannot find a course built for her.</li>
+      </ul>
+      <p class="lede" style="margin-top:18px;">The studio is sized to serve Mara.</p>
+    </section>
+
+    <section class="slide" aria-labelledby="s4">
+      <span class="slide-no">04</span>
+      <span class="slide-meta">The product</span>
+      <p class="kicker">04 · The product</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s4">One declared goal in, one personalized syllabus out.</h2>
+      <dl class="keys">
+        <div class="row"><dt>Intake</dt><dd>1 sentence on the goal · 1 paragraph on level · cadence + language</dd></div>
+        <div class="row"><dt>Syllabus</dt><dd>4 modules max, on a single page, locked after one revision round</dd></div>
+        <div class="row"><dt>Drip</dt><dd>Mondays at 09:00 buyer's local time, asynchronous</dd></div>
+        <div class="row"><dt>Each module</dt><dd>1 reading + 1 video + 1 exercise + 1 self-evaluation</dd></div>
+        <div class="row"><dt>End</dt><dd>A graded artifact the buyer keeps · refundable in the first week</dd></div>
+      </dl>
+      <p style="margin-top:24px;"><strong>$149</strong> single course · <strong>$39/mo</strong> standing · <strong>$299/mo</strong> coach-augmented.</p>
+    </section>
+
+    <section class="slide" aria-labelledby="s5">
+      <span class="slide-no">05</span>
+      <span class="slide-meta">Why now</span>
+      <p class="kicker">05 · Three forces converging</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s5">2025–2026 is the first window where this is unit-economic.</h2>
+      <ul>
+        <li><strong>LLMs got good at structured output.</strong> GLM 5.1 Flash + Claude 4.7 reliably draft a syllabus that passes editorial review with light edits.</li>
+        <li><strong>Citation infrastructure got open.</strong> Crossref + OpenLibrary cover ~80% of named readings. We can verify before drip.</li>
+        <li><strong>Adult learners got disenchanted.</strong> The Coursera certificate trade has failed. Buyers want craft.</li>
+      </ul>
+    </section>
+
+    <section class="slide" aria-labelledby="s6">
+      <span class="slide-no">06</span>
+      <span class="slide-meta">Economics</span>
+      <p class="kicker">06 · Per-buyer unit economics</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s6">~89% gross margin on the single-course tier.</h2>
+      <dl class="keys">
+        <div class="row"><dt>Price</dt><dd>$149 (single course)</dd></div>
+        <div class="row"><dt>LLM cost</dt><dd>$4–7 (syllabus + grading)</dd></div>
+        <div class="row"><dt>Editorial review</dt><dd>$8 (10 min human at $50/h)</dd></div>
+        <div class="row"><dt>Card / payment fees</dt><dd>$0 (NOWPayments crypto rail)</dd></div>
+      </dl>
+      <p style="margin-top:18px;">Subscription tier is 4× margin-positive vs. quarterly LLM cost. Coach-augmented is revenue-shared with the tutor pool, not cash-intensive.</p>
+    </section>
+
+    <section class="slide" aria-labelledby="s7">
+      <span class="slide-no">07</span>
+      <span class="slide-meta">Distribution</span>
+      <p class="kicker">07 · How buyers find us</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s7">We earn distribution by publishing useful artefacts.</h2>
+      <ul>
+        <li>One public syllabus per quarter (CC-BY) — anchors HN / subreddit posts.</li>
+        <li>One paid newsletter placement per quarter (Bytes, TLDR, Programmer Brain).</li>
+        <li>The desk (`tutor@`, `cohorts@`) — closes 60% of replied conversations.</li>
+        <li>Tutor-affiliate program — working tutors bring their clients.</li>
+      </ul>
+      <p style="margin-top:18px;"><em>We do not buy keyword search.</em></p>
+    </section>
+
+    <section class="slide" aria-labelledby="s8">
+      <span class="slide-no">08</span>
+      <span class="slide-meta">Traction · 90-day plan</span>
+      <p class="kicker">08 · Q1 targets</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s8">A small, deliberate flywheel.</h2>
+      <dl class="keys">
+        <div class="row"><dt>Single-course sales</dt><dd>50</dd></div>
+        <div class="row"><dt>Standing subscription</dt><dd>12 active</dd></div>
+        <div class="row"><dt>Coach-augmented</dt><dd>4 active</dd></div>
+        <div class="row"><dt>Cohort</dt><dd>1 (5 seats × 12 months)</dd></div>
+        <div class="row"><dt>Tutor-affiliate</dt><dd>1 onboarded</dd></div>
+        <div class="row"><dt>Q1 revenue</dt><dd>~$13 K</dd></div>
+      </dl>
+      <p style="margin-top:18px;">Break-even target: month 6 cumulative.</p>
+    </section>
+
+    <section class="slide" aria-labelledby="s9">
+      <span class="slide-no">09</span>
+      <span class="slide-meta">Team · studio</span>
+      <p class="kicker">09 · Inside the studio</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s9">Built lean inside `prin7r-projects`.</h2>
+      <ul>
+        <li>Shared payments rail (NOWPayments + Plisio backup).</li>
+        <li>Shared deploy host (`storage-contabo`).</li>
+        <li>Shared brand-identity discipline. Shared editorial voice.</li>
+        <li>Reading List staff: 1 lead pedagogue, 2 part-time editors, 3 part-time graders, an open tutor-affiliate pool.</li>
+      </ul>
+    </section>
+
+    <section class="slide" aria-labelledby="s10">
+      <span class="slide-no">10</span>
+      <span class="slide-meta">The ask</span>
+      <p class="kicker">10 · Three doors that are open</p>
+      <span class="gilt-rule"></span>
+      <h2 id="s10">We are not raising. The product is private; the door is open.</h2>
+      <ul>
+        <li><strong>Tutors</strong> — opt into the affiliate program at <a href="mailto:tutor@personalized-courses.prin7r.com">tutor@personalized-courses.prin7r.com</a>.</li>
+        <li><strong>Engineering managers</strong> — cohort enquiries at <a href="mailto:cohorts@personalized-courses.prin7r.com">cohorts@personalized-courses.prin7r.com</a>.</li>
+        <li><strong>Editors and graders</strong> — apply at the same address.</li>
+      </ul>
+      <span class="margin-note">— see you Monday at 09:00.</span>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -3,22 +3,43 @@
 @tailwind utilities;
 
 /* ---------------------------------------------------------------------------
-   [READING_LIST_GLOBALS] Library-shelf baseline — a private tutor's notebook.
-   Palette + type system documented in /DESIGN.md sections 4-6.
-   Five colors, four families, square edges, one shadow, two animations.
+   [READING_LIST_GLOBALS] Tutor's notebook on milky stone.
+   Refresh 2026-05-08 — palette + type lifted from the Anthropic reference
+   (warm-stone ivory page → milky #FAFAF8 per no-beige rule, near-black
+   #141413 dark cards, serif-grotesque pairing, word-level underline as the
+   primary emphasis device replacing color highlights). Reading List anchors
+   retained: gilt accent, marginalia red, Caveat handwritten margin notes.
+   The vellum hex was #EADFC2 (forbidden beige); it is now `paper-2 #F0EEE6`
+   per the no-beige rule — a barely-warm secondary surface, not a tan band.
    --------------------------------------------------------------------------- */
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Caveat:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
-  --parchment: #FAFAF8;
-  --vellum: #EADFC2;
-  --walnut: #3A2A1A;
-  --oak: #5C4327;
-  --sepia: #8A6E45;
-  --gilt: #A87E2C;
-  --marginalia: #A4321F;
-  --scholar: #3F5A3F;
+  /* Lifted from Anthropic (canvas swapped to milky #FAFAF8) */
+  --parchment:    #FAFAF8;   /* page base — milky white (was Anthropic ivory #faf9f5; swapped per no-beige rule) */
+  --vellum:       #F0EEE6;   /* secondary surface — was beige #EADFC2, now Anthropic paper-2 milky-ivory */
+  --paper-3:      #E8E6DC;   /* ivory-dark — body text on dark cards, dividers */
+  --oat-surface:  #E3DACC;   /* tertiary surface — release-card backgrounds */
+  --cloud-light:  #D1CFC5;   /* dividers, hairline borders */
+  --cloud-medium: #B0AEA5;   /* disabled / muted borders */
+  --cloud-dark:   #87867F;   /* secondary text, meta labels */
+  --slate-light:  #5E5D59;   /* tertiary text */
+  --slate-medium: #3D3D3A;   /* mid-dark borders, focus rings */
+  --slate-dark:   #141413;   /* primary text, dark feature card surface */
+
+  /* Reading List ink chain (kept — walnut/oak/sepia carry the tutor's-notebook voice on top of the Anthropic neutrals) */
+  --walnut:    #3A2A1A;   /* the ink — heaviest text on the milky page */
+  --oak:       #5C4327;   /* body text in long passages */
+  --sepia:     #8A6E45;   /* muted captions, kickers */
+
+  /* Reading List semantic accents (kept; sparingly applied per Anthropic single-accent-per-section rule) */
+  --gilt:        #A87E2C;   /* gold hairline / eyebrow rule */
+  --marginalia:  #A4321F;   /* editor's red pen — sparingly */
+  --scholar:     #3F5A3F;   /* "completed" / affirmative marker */
+
+  /* Anthropic accent reserve (clay terracotta for an Anthropic-flavored CTA) */
+  --clay:        #D97757;   /* warm terracotta — accent CTA, intentional warmth */
 }
 
 html {
@@ -37,13 +58,71 @@ body {
   color: var(--walnut);
 }
 
-/* Paper grain — a subtle radial wash that mimics aged stock without an image. */
+/* Paper grain — softened to a near-imperceptible cool wash (was warm beige radial) */
 .grain {
   background:
-    radial-gradient(1200px 600px at 18% 8%, rgba(168,126,44,.05), transparent 60%),
-    radial-gradient(900px 480px at 92% 110%, rgba(164,50,31,.04), transparent 60%),
+    radial-gradient(1200px 600px at 18% 8%, rgba(168,126,44,.025), transparent 60%),
+    radial-gradient(900px 480px at 92% 110%, rgba(164,50,31,.02), transparent 60%),
     var(--parchment);
 }
+
+/* Word-level underline emphasis — Anthropic's signature mechanic.
+   Apply to keywords in headlines instead of color/weight changes. */
+.emph-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--walnut);
+}
+
+/* Dark editorial feature card (Anthropic) — for "broadsheet" interruptions
+   in the milky page rhythm. Parchment text on near-black with hard 24px radius. */
+.feature-dark {
+  background: var(--slate-dark);
+  color: var(--parchment);
+  border-radius: 24px;
+  padding: 32px;
+}
+.feature-dark .feature-display {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 91px);
+  line-height: 1.1;
+  color: var(--parchment);
+  letter-spacing: -0.01em;
+}
+.feature-dark .feature-cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--parchment);
+  color: var(--slate-dark);
+  border: 1px solid var(--slate-dark);
+  border-radius: 0;
+  padding: 12px 28px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* Anthropic-style asymmetric primary CTA — flat top, rounded bottom.
+   Reserved for the single highest-priority nav CTA. */
+.btn-asymmetric {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--parchment);
+  color: var(--walnut);
+  border: 1px solid var(--walnut);
+  border-radius: 0 0 8px 8px;
+  padding: 12px 28px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 80ms linear;
+}
+.btn-asymmetric:hover { background: var(--vellum); }
 
 ::selection {
   background: var(--marginalia);
@@ -133,18 +212,20 @@ body {
 
 .section { border-bottom: 1px solid rgba(58,42,26,.14); }
 
-/* The "syllabus card" frame — the marquee element of the brand. */
+/* The "syllabus card" frame — the marquee element of the brand.
+   Now sits on the milky vellum (#F0EEE6) instead of a beige hex; the inset
+   double-border trick is preserved as the tutor's-notebook signature. */
 .syllabus-card {
   position: relative;
   background: var(--vellum);
-  border: 1px solid rgba(58,42,26,.22);
-  box-shadow: 0 8px 24px -16px rgba(58,42,26,.32);
+  border: 1px solid var(--cloud-medium);
+  box-shadow: 0 8px 24px -16px rgba(20,20,19,.18);
 }
 .syllabus-card::before {
   content: "";
   position: absolute;
   inset: 8px;
-  border: 1px solid rgba(58,42,26,.10);
+  border: 1px solid var(--cloud-light);
   pointer-events: none;
 }
 
@@ -223,8 +304,10 @@ body {
   pointer-events: none;
 }
 .tier.featured {
+  /* Featured tier sits on the milky vellum (was beige) with gilt border preserved. */
   background: var(--vellum);
   border-color: var(--gilt);
+  border-width: 2px;
 }
 .tier-name {
   font-family: "EB Garamond", Garamond, Georgia, serif;

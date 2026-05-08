@@ -72,7 +72,7 @@ function Logo() {
             fontFamily="EB Garamond, Garamond, Georgia, serif"
             fontWeight="600"
             fontSize="34"
-            fill="#F4ECD8"
+            fill="#FAFAF8"
           >
             RL
           </text>

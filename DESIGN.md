@@ -10,11 +10,13 @@ The audience profile is fully documented in `/docs/05-audience-profile.md`. The 
 
 ## 2. Visual positioning
 
-The visual brand is _a private tutor's notebook_ — warm parchment paper, walnut ink, a single gilt rule, marginalia in red. The pose is editorial, the cadence is calm, the chrome is minimal.
+The visual brand is _a private tutor's notebook on milky stone_ — a milky-white parchment page, walnut ink, a single gilt rule, marginalia in red, with the visual system lifted from the Anthropic reference (research-journal authority where word-level underlines replace color emphasis, and the only chromatic warmth is the page itself + the gilt eyebrow rules). The canvas hex was previously a warm parchment paper (`#FAFAF8` was already milky, but the secondary surface `vellum` was a beige `#EADFC2` — fixed in the 2026-05-08 design refresh by swapping to Anthropic paper-2 `#F0EEE6` per the no-beige rule).
 
-**It is anti-edtech**: no orange / blue, no "personalized for you in 30 seconds!" countdowns, no streaks, no certificate badges. **It is anti-AI-marketing**: no purple gradients, no robot iconography, no chat-bubble hero. **It is anti-platform**: no app-store mockups, no dashboards in the hero.
+The pose is editorial, the cadence is calm, the chrome is minimal. Word-level underlines mark headline keywords (Anthropic mechanic) — never color emphasis. Dark editorial feature cards (Anthropic `.feature-dark`: slate-dark `#141413` background, 24px radius, EB Garamond display at clamp 48-91px) interrupt the milky page rhythm where a "broadsheet" beat is needed. The asymmetric `0 0 8px 8px` radius CTA (flat top, rounded bottom only) is the single primary nav button per Anthropic.
 
-It is _pro-craft_: a real-shaped syllabus card carries the hero, real readings are named, real testimonials are paraphrased with permission, and the typography is the kind you would set for a small literary press.
+**It is anti-edtech**: no orange / blue, no "personalized for you in 30 seconds!" countdowns, no streaks, no certificate badges. **It is anti-AI-marketing**: no purple gradients, no robot iconography, no chat-bubble hero. **It is anti-platform**: no app-store mockups, no dashboards in the hero. **It is anti-beige**: `parchment` and `vellum` are both milky/ivory neutrals, never tan.
+
+It is _pro-craft_: a real-shaped syllabus card carries the hero (now sitting on Anthropic-derived ivory surfaces with the same inset double-border tutor's-notebook signature), real readings are named, real testimonials are paraphrased with permission, and the typography is the kind you would set for a small literary press.
 
 ## 3. ShadCN baseline and local component policy
 
@@ -32,18 +34,27 @@ All other UI elements (navigation, FAQ disclosure, pricing tier grid) are plain 
 
 ## 4. Color tokens
 
-Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properties in `apps/landing/app/globals.css`:
+Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properties in `apps/landing/app/globals.css`. Refresh 2026-05-08: the palette is now an 18-token system: 10 Anthropic-derived neutrals (canvas swapped to milky `#FAFAF8`) + 3 Reading List ink tokens (walnut/oak/sepia) + 4 Reading List semantic accents + clay (Anthropic terracotta) reserved for Anthropic-flavored CTAs.
 
-| Role             | Token         | Hex        | Where used                                                |
-|------------------|---------------|------------|-----------------------------------------------------------|
-| surface          | `parchment`   | `#FAFAF8`  | the page itself; `<html>` and `<body>` background         |
-| surface alt      | `vellum`      | `#EADFC2`  | cards on the parchment; `tier.featured` and the syllabus card |
-| ink (primary)    | `walnut`      | `#3A2A1A`  | headings, navigation, primary text, buttons               |
-| body             | `oak`         | `#5C4327`  | long passages, descriptions, FAQ answers                  |
-| muted            | `sepia`       | `#8A6E45`  | mono kickers, captions, dates                             |
-| accent (gilt)    | `gilt`        | `#A87E2C`  | hairlines, eyebrow rules, focus rings, "Most popular" border |
-| editorial        | `marginalia` | `#A4321F`  | margin notes, button hover, pricing-callout vertical rule |
-| affirmative      | `scholar`     | `#3F5A3F`  | reserved for `apps/app/` "passed" / "completed" markers    |
+| Role | Token | Hex | Where used |
+|---|---|---|---|
+| page base                      | `parchment`     | `#FAFAF8`  | the page itself; `<html>` and `<body>` background |
+| secondary surface (was beige!) | `vellum`        | `#F0EEE6`  | cards on parchment; `tier.featured` and the syllabus card. **Was beige `#EADFC2`; replaced 2026-05-08** with Anthropic paper-2 milky-ivory per no-beige rule. |
+| ivory-dark                     | `paper-3`       | `#E8E6DC`  | ivory-dark — body text on dark cards, dividers |
+| oat surface                    | `oat-surface`   | `#E3DACC`  | tertiary surface — release-card backgrounds, callouts |
+| neutral hairline               | `cloud-light`   | `#D1CFC5`  | dividers, hairline borders, inactive states |
+| muted border                   | `cloud-medium`  | `#B0AEA5`  | disabled / muted borders |
+| meta text                      | `cloud-dark`    | `#87867F`  | secondary text, meta labels, timestamps |
+| tertiary text                  | `slate-light`   | `#5E5D59`  | tertiary text, captions, footer secondary |
+| dark border                    | `slate-medium`  | `#3D3D3A`  | mid-dark borders, focus rings on light surfaces |
+| dark surface                   | `slate-dark`    | `#141413`  | primary dark text + `.feature-dark` card surface — Anthropic's foreground+background dual-purpose color |
+| ink (primary)                  | `walnut`        | `#3A2A1A`  | headings, navigation, primary text, buttons (Reading List signature ink — kept) |
+| body                           | `oak`           | `#5C4327`  | long passages, descriptions, FAQ answers (Reading List ink chain) |
+| muted                          | `sepia`         | `#8A6E45`  | mono kickers, captions, dates (Reading List ink chain) |
+| accent (gilt)                  | `gilt`          | `#A87E2C`  | hairlines, eyebrow rules, focus rings, "Most popular" border |
+| editorial                      | `marginalia`    | `#A4321F`  | margin notes, button hover, pricing-callout vertical rule |
+| affirmative                    | `scholar`       | `#3F5A3F`  | reserved for `apps/app/` "passed" / "completed" markers |
+| Anthropic accent reserve       | `clay`          | `#D97757`  | Anthropic-flavored warm terracotta — accent CTA, one per section maximum |
 
 **Contrast checks** (all WCAG AA at 4.5:1 minimum for body, 3:1 for large/non-text):
 
@@ -58,19 +69,19 @@ Defined in `apps/landing/tailwind.config.ts` and mirrored as CSS custom properti
 
 ## 5. Typography
 
-Locked in `tailwind.config.ts`'s `fontFamily` extension and imported in `globals.css` from Google Fonts.
+Locked in `tailwind.config.ts`'s `fontFamily` extension and imported in `globals.css` from Google Fonts. The four-family Reading List system is now anchored to the Anthropic typographic mechanic (serif-grotesque pairing, mono for metadata) plus the Reading List signature handwritten Caveat margin notes.
 
-| Family           | Token          | Used for                                          |
-|------------------|----------------|---------------------------------------------------|
-| EB Garamond      | `font-display` | All headings · long-form body · tier prices     |
-| Inter            | `font-sans`    | UI button labels · the kickoff email-style stamps |
-| Caveat           | `font-margin`  | Handwritten margin notes (`.margin-note`, `.handwritten`) |
-| JetBrains Mono   | `font-mono`    | Kickers, dates, course numbers, footer plates     |
+| Family           | Token          | Anthropic role analog | Used for                                                |
+|---|---|---|---|
+| EB Garamond      | `font-display` | Anthropic Serif       | All headings · long-form body · tier prices · `.feature-dark` display |
+| Inter            | `font-sans`    | Anthropic Sans        | UI button labels · CTAs · email-style stamps           |
+| Caveat           | `font-margin`  | (Reading List signature, no Anthropic analog) | Handwritten margin notes (`.margin-note`, `.handwritten`) |
+| JetBrains Mono   | `font-mono`    | Anthropic Mono        | Kickers, dates, course numbers, footer plates          |
 
 **Type scale**
 
-- Display H1: 52–96 px clamp (responsive)
-- Section H2: 40–56 px
+- Display H1: 60–96 px clamp (responsive) — rebalanced toward Anthropic 91 / line-height 1.05 / -0.02em tracking
+- Section H2 (masthead): 40–61 px clamp / 1.1 line-height / -0.012em — matches Anthropic h1 scale (61px / 1.1 / -1.22px)
 - Component H3: 22–28 px
 - Body: 17.5 px / 1.55
 - Long passages: EB Garamond at 16.5–18 px / 1.55
@@ -80,6 +91,8 @@ Locked in `tailwind.config.ts`'s `fontFamily` extension and imported in `globals
 **Italic policy**
 
 EB Garamond italic is used for editorial flourishes — the lede in the hero, the "or you get the setup back" callouts, the testimonials. Maximum **one italic phrase per paragraph**. Caveat italic is _the_ marginalia voice — it is reserved for handwritten margin notes and never used for body copy.
+
+**Word-level underline emphasis (Anthropic mechanic).** Key headline nouns ("syllabus-of-one", "weekly", "verified", "tutor") may receive a 3px text-decoration underline at 6px offset, color `--walnut`. This replaces color emphasis on display headlines. Use the `.emph-underline` class. Never change the color or weight of headline keywords for emphasis — underline only.
 
 ## 6. Spacing, radius, shadows, and borders
 
@@ -260,3 +273,4 @@ node -e '
 ## 15. Changelog
 
 - **2026-05-08 · v0.1.0** — Initial Wave 2 build. Library-shelf brand locked. Landing live at `personalized-courses.prin7r.com`. NOWPayments hosted-invoice CTA wired on three tiers. 10 strategy docs + this DESIGN.md committed. Production screenshots captured at 1440×900 + 390×844.
+- **2026-05-08 · design refresh — anthropic with milky-canvas adaptation** — Lifted full Anthropic palette (10 ivory/slate neutrals + clay terracotta accent reserve) onto the Reading List ink chain (walnut/oak/sepia kept; gilt/marginalia/scholar accents kept). The most important fix: `vellum` was a beige `#EADFC2` in violation of the no-beige rule — replaced with Anthropic paper-2 milky-ivory `#F0EEE6`. Token count grew from 8 → 18. Components added: `.emph-underline` (3px word-level underline emphasis — Anthropic's primary mechanic, replacing color highlights on headline keywords), `.feature-dark` (24px-radius near-black editorial card with EB Garamond 91px display per Anthropic surface alternation system), `.btn-asymmetric` (the Anthropic 0/0/8/8 flat-top rounded-bottom CTA). Display scale rebalanced to Anthropic 91px / line-height 1.05; masthead h1 to 61px / line-height 1.1. Page logo `RL` plate fill changed from `#F4ECD8` (beige) to `#FAFAF8` (milky). Paper-grain radial wash softened (was warm beige, now near-imperceptible cool wash). Brand essence (tutor's notebook on milky stone) re-anchored in §2.

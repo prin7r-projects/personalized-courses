@@ -3,12 +3,14 @@ import type { Config } from "tailwindcss";
 /**
  * [READING_LIST_TAILWIND] Locked tokens for the personalized-courses landing.
  *
- * Aesthetic: a private tutor's notebook — warm parchment paper, walnut ink,
- * gilt accents, marginalia-red for editorial flourish. The palette is
- * explicitly anti-edtech (no blue/orange) and anti-AI (no purple gradient).
+ * Aesthetic: a private tutor's notebook on milky stone — a lifted Anthropic
+ * palette (ivory neutrals + dark feature cards + word-level underline
+ * emphasis) with the canvas swapped to milky `#FAFAF8` per the no-beige rule.
+ * Reading List anchors retained: walnut/oak/sepia ink chain, gilt + marginalia
+ * accents, Caveat margin notes.
  *
- * Source of truth for the Reading List palette + type pair. Mirrored in
- * `app/globals.css` and documented in /DESIGN.md sections 4-6.
+ * Refresh 2026-05-08 — vellum hex was beige `#EADFC2` and is now milky-ivory
+ * `#F0EEE6` (Anthropic paper-2). Source of truth lives in /DESIGN.md §4-6.
  */
 
 const config: Config = {
@@ -20,25 +22,36 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Library-shelf neutrals
-        parchment: "#FAFAF8",  // warm aged paper, the page itself
-        vellum: "#EADFC2",     // a lighter alternate page (cards on parchment)
-        walnut: "#3A2A1A",     // the ink — heaviest text
-        oak: "#5C4327",        // body text in long passages
-        sepia: "#8A6E45",      // muted captions, kickers
-        // Accents
-        gilt: "#A87E2C",       // a single gold line, like a foil-stamped letter
-        marginalia: "#A4321F", // editor's red pen — used sparingly
-        scholar: "#3F5A3F"     // an alternate marker for "completed" / "passed"
+        // Anthropic-derived neutrals (canvas swapped to milky #FAFAF8)
+        parchment: "#FAFAF8",       // page itself
+        vellum: "#F0EEE6",          // secondary surface — was beige #EADFC2; now milky-ivory
+        "paper-3": "#E8E6DC",       // ivory-dark
+        "oat-surface": "#E3DACC",   // tertiary surface
+        "cloud-light": "#D1CFC5",
+        "cloud-medium": "#B0AEA5",
+        "cloud-dark": "#87867F",
+        "slate-light": "#5E5D59",
+        "slate-medium": "#3D3D3A",
+        "slate-dark": "#141413",
+        // Reading List ink chain (kept)
+        walnut: "#3A2A1A",
+        oak: "#5C4327",
+        sepia: "#8A6E45",
+        // Reading List accents
+        gilt: "#A87E2C",
+        marginalia: "#A4321F",
+        scholar: "#3F5A3F",
+        // Anthropic accent reserve
+        clay: "#D97757"
       },
       fontFamily: {
-        // Humanist serif — display + body for long-form
+        // Humanist serif (Anthropic Serif analog) — display + body for long-form
         display: ["EB Garamond", "Garamond", "Georgia", "serif"],
-        // Clean grotesque for UI labels
+        // Clean grotesque for UI labels (Anthropic Sans analog)
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        // Handwritten margin notes
+        // Handwritten margin notes (Reading List signature)
         margin: ['"Caveat"', "Georgia", "serif"],
-        // Mono for kickers / dates
+        // Mono for kickers / dates (Anthropic Mono analog)
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"]
       },
       maxWidth: {
@@ -48,20 +61,23 @@ const config: Config = {
       borderRadius: {
         none: "0",
         sm: "1px",
-        md: "2px",
+        md: "8px",      // Anthropic release-card 8px radius
+        lg: "16px",
+        "2xl": "24px",  // Anthropic dark feature card radius
         full: "9999px"
       },
       boxShadow: {
-        page: "0 1px 0 0 rgba(58,42,26,.06)",
-        plate: "0 8px 24px -16px rgba(58,42,26,.32)"
+        page: "0 1px 0 0 rgba(20,20,19,.06)",
+        plate: "0 8px 24px -16px rgba(20,20,19,.18)"
       },
       letterSpacing: {
         tightest: "-0.012em",
         ledger: "0.18em"
       },
       fontSize: {
-        display: ["112px", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
-        masthead: ["56px", { lineHeight: "1.04", letterSpacing: "-0.012em" }]
+        // Display rebalanced toward Anthropic 91px / 1.1
+        display: ["clamp(60px, 9vw, 96px)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        masthead: ["clamp(40px, 6vw, 61px)", { lineHeight: "1.1", letterSpacing: "-0.012em" }]
       },
       keyframes: {
         underline: {

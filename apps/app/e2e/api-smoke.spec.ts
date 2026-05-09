@@ -115,19 +115,23 @@ test.describe("API smoke tests", () => {
 
   // -- intake (may or may not require auth depending on route) ------------
 
-  test("intake POST: 200/400 (local) / 401 (deployed)", async ({
+  test("intake POST returns 400 (validation error, no auth required)", async ({
     request,
   }) => {
     const res = await request.post("/app/api/intake", {
       data: { goal: "", level_context: "", locale: "en" },
     });
-    // Local: 200/400 if intake route works, 404 if not; Deployed: 401
-    expect(isDeployed ? [401] : [200, 400, 401, 404]).toContain(res.status());
+    // Intake doesn't require auth — returns 400 for empty/missing fields.
+    // Local: 200/400/404 depending on handler state; Deployed: 400.
+    expect(isDeployed ? [400] : [200, 400, 404]).toContain(res.status());
   });
 
-  test("intake redeem requires token / auth", async ({ request }) => {
+  test("intake redeem returns 400 for missing token (no auth required)", async ({
+    request,
+  }) => {
     const res = await request.post("/app/api/intake/redeem", { data: {} });
-    expect(isDeployed ? [401] : [400, 404]).toContain(res.status());
+    // Intake/redeem doesn't require auth — returns 400 for missing token.
+    expect(isDeployed ? [400] : [400, 404]).toContain(res.status());
   });
 
   test("intake redeem returns error for invalid token", async ({
@@ -136,7 +140,8 @@ test.describe("API smoke tests", () => {
     const res = await request.post("/app/api/intake/redeem", {
       data: { token: "expired.token.fake" },
     });
-    expect(isDeployed ? [401] : [404, 410]).toContain(res.status());
+    // Deployed: 410 (token expired/invalid); Local: 404 if handler missing, 410 if working.
+    expect(isDeployed ? [410] : [404, 410]).toContain(res.status());
   });
 
   // -- submissions (may or may not require auth) --------------------------

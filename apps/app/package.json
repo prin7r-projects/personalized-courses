@@ -14,6 +14,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "test:e2e": "playwright test",
+    "test:e2e:ci": "playwright test --config=playwright.ci.config.ts",
     "test:e2e:nightly": "E2E_BASE_URL=https://personalized-courses.prin7r.com playwright test"
   },
   "dependencies": {

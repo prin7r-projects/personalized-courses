@@ -1,0 +1,41 @@
+name: e2e-nightly
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:      # manual trigger for ad-hoc runs
+  push:
+    branches: [main]
+    paths:
+      - "apps/app/e2e/**"
+      - "apps/app/playwright.ci.config.ts"
+      - ".github/workflows/e2e-nightly.yml"
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: apps/app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Enable Corepack
+        run: corepack enable && corepack prepare pnpm@9.15.4 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install chromium
+
+      - name: Run e2e against deployed URL
+        run: pnpm test:e2e:ci
+        env:
+          E2E_BASE_URL: https://personalized-courses.prin7r.com
+          CI: "true"

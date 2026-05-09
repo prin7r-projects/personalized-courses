@@ -1,4 +1,22 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: curriculum7-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: curriculum7
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-curriculum7}
+      POSTGRES_DB: curriculum7
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U curriculum7"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
   landing:
     build:
       context: .
@@ -10,6 +28,8 @@ services:
       - "3000"
     env_file:
       - .env
+    networks:
+      - traefik
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.personalized-courses.rule=Host(`personalized-courses.prin7r.com`)"
@@ -28,6 +48,12 @@ services:
       - "3100"
     env_file:
       - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - traefik
+      - internal
     labels:
       - "traefik.enable=true"
       # Single router — Next.js basePath handles /app prefix natively
@@ -35,3 +61,11 @@ services:
       - "traefik.http.routers.curriculum7-app.entrypoints=websecure"
       - "traefik.http.routers.curriculum7-app.tls.certresolver=letsencrypt"
       - "traefik.http.services.curriculum7-app.loadbalancer.server.port=3100"
+
+networks:
+  traefik:
+    external: true
+  internal:
+
+volumes:
+  pgdata:

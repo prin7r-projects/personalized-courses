@@ -30,23 +30,8 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
+      # Single router — Next.js basePath handles /app prefix natively
       - "traefik.http.routers.curriculum7-app.rule=Host(`personalized-courses.prin7r.com`) && PathPrefix(`/app`)"
       - "traefik.http.routers.curriculum7-app.entrypoints=websecure"
       - "traefik.http.routers.curriculum7-app.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.curriculum7-app.middlewares=curriculum7-app-strip"
-      - "traefik.http.middlewares.curriculum7-app-strip.stripprefix.prefixes=/app"
       - "traefik.http.services.curriculum7-app.loadbalancer.server.port=3100"
-
-      # API routes (no stripping needed — Next.js handles /api/* directly)
-      - "traefik.http.routers.curriculum7-api.rule=Host(`personalized-courses.prin7r.com`) && PathPrefix(`/api/intake`,`/api/courses`,`/api/submissions`,`/api/operator`,`/api/healthz`)"
-      - "traefik.http.routers.curriculum7-api.entrypoints=websecure"
-      - "traefik.http.routers.curriculum7-api.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.curriculum7-api.priority=200"
-      - "traefik.http.services.curriculum7-api.loadbalancer.server.port=3100"
-
-      # Auth routes
-      - "traefik.http.routers.curriculum7-auth.rule=Host(`personalized-courses.prin7r.com`) && PathPrefix(`/api/auth`,`/login`,`/dashboard`,`/intake`)"
-      - "traefik.http.routers.curriculum7-auth.entrypoints=websecure"
-      - "traefik.http.routers.curriculum7-auth.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.curriculum7-auth.priority=200"
-      - "traefik.http.services.curriculum7-auth.loadbalancer.server.port=3100"

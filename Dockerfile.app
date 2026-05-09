@@ -12,6 +12,8 @@ RUN corepack enable && corepack prepare pnpm@9.15.4 --activate
 COPY apps/app/. .
 COPY --from=deps /app/node_modules ./node_modules
 ENV NEXT_TELEMETRY_DISABLED=1
+# Dummy DATABASE_URL for build-time static analysis (no actual connection needed)
+ENV DATABASE_URL=postgresql://dummy:dummy@localhost:5432/dummy
 RUN pnpm build
 
 FROM node:22-alpine AS runner

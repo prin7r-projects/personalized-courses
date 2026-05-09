@@ -1,11 +1,11 @@
 import NextAuth from "next-auth";
 import Email from "next-auth/providers/email";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { sendMagicLinkEmail } from "@/lib/email";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(getDb()),
   providers: [
     Email({
       server: {},

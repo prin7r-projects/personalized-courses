@@ -1,0 +1,20 @@
+{
+  "name": "curriculum7-workers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "syllabus": "node --import tsx worker/syllabus.ts",
+    "drip": "node --import tsx worker/drip.ts",
+    "grade": "node --import tsx worker/grade.ts",
+    "verify": "node --import tsx worker/verify.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.3",
+    "postgres": "^3.4.5",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5"
+  }
+}

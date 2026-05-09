@@ -34,7 +34,6 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.personalized-courses.rule=Host(`personalized-courses.prin7r.com`)"
       - "traefik.http.routers.personalized-courses.entrypoints=websecure"
-      - "traefik.http.routers.personalized-courses.tls.certresolver=letsencrypt"
       - "traefik.http.services.personalized-courses.loadbalancer.server.port=3000"
 
   app:

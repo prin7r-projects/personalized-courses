@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Caveat:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --parchment: #FAFAF8;
+  --vellum: #F5F3F1;
+  --paper-3: #EDEBE4;
+  --oat-surface: #E5E2D8;
+  --cloud-light: #D1CFC5;
+  --cloud-medium: #B0AEA5;
+  --cloud-dark: #87867F;
+  --slate-light: #5E5D59;
+  --slate-medium: #3D3D3A;
+  --slate-dark: #141413;
+  --walnut: #3A2A1A;
+  --oak: #5C4327;
+  --sepia: #8A6E45;
+  --gilt: #A87E2C;
+  --marginalia: #A4321F;
+  --scholar: #3F5A3F;
+  --clay: #D97757;
+}
+
+html {
+  background: var(--parchment);
+  color: var(--walnut);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-size: 17.5px;
+  line-height: 1.55;
+  background: var(--parchment);
+  color: var(--walnut);
+}
+
+::selection {
+  background: var(--marginalia);
+  color: var(--parchment);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--gilt);
+  outline-offset: 2px;
+}
+
+/* Brand components */
+.kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.eyebrow-rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: var(--gilt);
+  margin: 16px 0;
+}
+
+.gilt-rule { height: 1px; background: var(--gilt); }
+.hairline { height: 1px; background: rgba(58, 42, 26, .16); }
+
+.note-frame {
+  background: var(--parchment);
+  border: 1px solid rgba(58, 42, 26, .18);
+  position: relative;
+}
+
+.note-frame::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(58, 42, 26, .06);
+  pointer-events: none;
+}
+
+.margin-note {
+  font-family: "Caveat", Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--marginalia);
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+
+.ink-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--marginalia);
+  border-radius: 50%;
+  animation: ink 1.6s ease-in-out infinite;
+}
+
+@keyframes ink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-dot { animation: none; opacity: 1; }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--walnut);
+  color: var(--parchment);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--walnut);
+  text-decoration: none;
+  transition: background 100ms linear, border-color 100ms linear, color 100ms linear;
+  cursor: pointer;
+}
+.btn:hover { background: var(--marginalia); border-color: var(--marginalia); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--walnut);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14.5px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--walnut);
+  text-decoration: none;
+  transition: background 100ms linear, color 100ms linear;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: var(--walnut); color: var(--parchment); }
+
+/* Form elements */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  background: var(--parchment);
+  border: 1px solid rgba(58, 42, 26, .25);
+  color: var(--walnut);
+  font-family: "EB Garamond", Garamond, Georgia, serif;
+  font-size: 17px;
+  padding: 10px 14px;
+  border-radius: 0;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  outline: 1.5px solid var(--gilt);
+  outline-offset: 2px;
+  border-color: var(--gilt);
+}
+
+label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  display: block;
+  margin-bottom: 6px;
+}

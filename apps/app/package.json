@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start -p 3100",
     "lint": "next lint",
+    "test:e2e": "playwright test",
+    "test:e2e:ci": "playwright test --config=playwright.ci.config.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "test:e2e": "playwright test",
+    "test:e2e:nightly": "E2E_BASE_URL=https://personalized-courses.prin7r.com playwright test"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.9.2",

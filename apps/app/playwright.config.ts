@@ -14,11 +14,22 @@ import { defineConfig, devices } from "@playwright/test";
  * The Next.js basePath is /app, so all routes are under /app.
  */
 
-const DEPLOYED_URL = "https://personalized-courses.prin7r.com";
+const DEPLOYED_HOST = "personalized-courses.prin7r.com";
+const DEPLOYED_URL = `https://${DEPLOYED_HOST}`;
 const LOCAL_URL = "http://localhost:3100";
 
 const isRemote = !!process.env.E2E_BASE_URL;
 const isCI = !!process.env.CI;
+
+// When running against a raw IP / localhost with TLS, we must send the
+// correct Host header so Traefik can route.  Playwright browser-level
+// request fixture doesn't let us set Host, but the APIRequestContext does
+// via extraHTTPHeaders.  For CI/nightly, E2E_BASE_URL should be the
+// publicly-routable domain; for internal testing, set E2E_EXTRA_HOST to
+// the domain Traefik expects.
+const extraHeaders = process.env.E2E_EXTRA_HOST
+  ? { Host: process.env.E2E_EXTRA_HOST }
+  : undefined;
 
 export default defineConfig({
   testDir: "./e2e",
@@ -30,6 +41,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.E2E_BASE_URL ?? LOCAL_URL,
     trace: "on-first-retry",
+    ...(extraHeaders ? { extraHTTPHeaders: extraHeaders } : {}),
   },
   projects: [
     {

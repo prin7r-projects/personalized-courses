@@ -60,6 +60,7 @@ services:
       - "traefik.http.routers.curriculum7-app.rule=Host(`app.personalized-courses.prin7r.com`)"
       - "traefik.http.routers.curriculum7-app.priority=50"
       - "traefik.http.routers.curriculum7-app.entrypoints=websecure"
+      - "traefik.http.routers.curriculum7-app.tls=true"
       - "traefik.http.services.curriculum7-app.loadbalancer.server.port=3100"
 
 networks:
